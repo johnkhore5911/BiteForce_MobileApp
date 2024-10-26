@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
-import COLORS from '../constants/Colors'; // Ensure this path is correct
-import Button from '../components/Button.js'; // Ensure this path is correct
+import COLORS from '../constants/Colors'; 
+import Button from '../components/Button.js'; 
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -14,7 +14,6 @@ function LoginPatient({ navigation }) {
 
     const onLogin = async() => {
         console.log("Login pressed");
-        // navigation.navigate("UserDetails");
         try{
             const response = await axios.post("https://bite-force-server.vercel.app/api/v1/getPatientId",
                 {
@@ -35,7 +34,6 @@ function LoginPatient({ navigation }) {
                     try {
                       await AsyncStorage.setItem('token', value);
                       console.log("saved token:",value)
-                    //   console.warn("saved token:",value)
                       console.log(value)
                     } catch (e) {
                         // console.warn("Error while saving userId in async storage",e);
@@ -45,9 +43,7 @@ function LoginPatient({ navigation }) {
                 navigation.navigate('PatientDetails', { item: response2.data.patients });
             } catch (error) {
               console.error("Error while fetching patient slot data", error);
-            //   console.warn("Not able to get Patient slot data");
             }
-    //   };
 
         }
         catch(error){
@@ -64,7 +60,6 @@ function LoginPatient({ navigation }) {
                 <Text style={styles.title}>Login</Text>
                 <Text style={styles.subtitle}>Enter your details to log in</Text>
 
-                {/* Patient ID Input */}
                 <View style={styles.inputContainer}>
                     <Text style={styles.label}>Patient ID</Text>
                     <TextInput
@@ -75,7 +70,6 @@ function LoginPatient({ navigation }) {
                     />
                 </View>
 
-                {/* Name Input */}
                 <View style={styles.inputContainer}>
                     <Text style={styles.label}>Name</Text>
                     <TextInput
@@ -86,7 +80,6 @@ function LoginPatient({ navigation }) {
                     />
                 </View>
 
-                {/* Age Input */}
                 <View style={styles.inputContainer}>
                     <Text style={styles.label}>Age</Text>
                     <TextInput
@@ -99,7 +92,6 @@ function LoginPatient({ navigation }) {
                 </View>
 
 
-                {/* Login Button */}
                 <Button
                     onPress={onLogin}
                     title="Login"
@@ -123,7 +115,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 22,
     },
     title: {
-        fontSize: 30, // Increased font size
+        fontSize: 30, 
         fontWeight: 'bold',
         marginVertical: 12,
         color: "#208B81",
@@ -133,7 +125,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: "#222",
         textAlign: 'center',
-        marginBottom: 20, // Added space below subtitle
+        marginBottom: 20, 
     },
     inputContainer: {
         marginBottom: 12,
@@ -143,12 +135,11 @@ const styles = StyleSheet.create({
         color: "#000",
         fontWeight: '400',
         marginVertical: 8,
-        textAlign: 'left', // Align label text to the left
+        textAlign: 'left', 
     },
     textInput: {
         width: "100%",
         height: 48,
-        // borderColor: COLORS.black,
         borderWidth: 1,
         borderRadius: 8,
         paddingLeft: 22,

@@ -8,16 +8,16 @@ const SplashScreen = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('PreWelcome'); // Navigate to your PreWelcome screen
-    }, 3000); // 3 seconds
+      navigation.replace('PreWelcome'); 
+    }, 3000); 
 
-    return () => clearTimeout(timer); // Cleanup timer on unmount
+    return () => clearTimeout(timer); 
   }, [navigation]);
 
   return (
     <View style={styles.container}>
       <Image
-        source={require('../Assets/dic.png')} // Replace with your logo path
+        source={require('../Assets/dic.png')} 
         resizeMode='contain'
         style={styles.logo}
       />
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff', // Match your theme color
+    backgroundColor: '#fff', 
   },
   logo: {
     width: 250,

@@ -31,7 +31,7 @@ const UserDetails = ({ route }) => {
   const [maxIncisors, setMaxIncisors] = useState([]);
 
   const addSlot = ({ userDetails }) => {
-    navigation.navigate('BiteForceMonitor', { userId: userDetails.item._id, userDetails });
+    navigation.navigate('GetIP', { userId: userDetails.item._id, userDetails });
   };
 
   const renderSlotItem = ({ item }) => (
@@ -48,7 +48,6 @@ const UserDetails = ({ route }) => {
   );
 
   const fetchSlots = async () => {
-    // setLoading(true); // Show loader for slots
     try {
       console.log("Fetching slots in userDetails")
       const response = await axios.post("https://bite-force-server.vercel.app/api/v1/getPatientSlot", {

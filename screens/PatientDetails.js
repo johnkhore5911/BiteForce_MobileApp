@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
-// import Entypo from 'react-native-vector-icons/Entypo';
-// import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaxValuesGraph from '../InsideScreens/MaxValuesGraph';
 
 const PatientDetails = ({ route }) => {
@@ -20,7 +18,7 @@ const PatientDetails = ({ route }) => {
   const [maxUnilateralRight, setMaxUnilateralRight] = useState([]);
   const [maxIncisors, setMaxIncisors] = useState([]);
 
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true); 
 
   const renderSlotItem = ({ item }) => (
     <TouchableOpacity onPress={() => navigation.navigate("SlotGraph", { item })}>
@@ -121,19 +119,9 @@ const PatientDetails = ({ route }) => {
 
       <View style={styles.toggleView}>
         <TouchableOpacity onPress={() => setShowReading(true)}>
-          {/* <AntDesign
-            name="filetext1"
-            size={30}
-            color={showReadings ? "#6200ee" : "#ccc"}
-          /> */}
           <Text style={showReadings ? styles.toggleActive : styles.toggleInactive}>Readings</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setShowReading(false)}>
-          {/* <Entypo
-            name="bar-graph"
-            size={30}
-            color={!showReadings ? "#6200ee" : "#ccc"}
-          /> */}
           <Text style={!showReadings ? styles.toggleActive : styles.toggleInactive}>Graphs</Text>
         </TouchableOpacity>
       </View>
@@ -148,9 +136,6 @@ const PatientDetails = ({ route }) => {
         />
       ) : (
         <View style={styles.graphPlaceholder}>
-          {/* <Text style={styles.graphText}> */}
-            {/* Displaying weekly, monthly, and yearly graphs of the previous data. */}
-          {/* </Text> */}
           <MaxValuesGraph
             maxBilateralLeft={maxBilateralLeft}
             maxBilateralRight={maxBilateralRight}

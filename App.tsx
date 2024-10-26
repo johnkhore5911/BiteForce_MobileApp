@@ -14,6 +14,7 @@ import Main from './screens/Main'
 import UserDetails from './screens/UserDetails'
 import SlotGraph from './InsideScreens/SlotGraph'
 import SplashScreen from './screens/SplashScreen'
+import GetIP from './screens/GetIP'
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -29,6 +30,7 @@ const App = () => {
         <Stack.Screen name="PatientDetails" component={PatientDetails}  options={{ headerShown: false }}  />
         <Stack.Screen name="Welcome" component={Welcome}  options={{ headerShown: false }}  />
         <Stack.Screen name="Main" component={Main}  options={{ headerShown: false }}  />
+        <Stack.Screen name="GetIP" component={GetIP}  options={{ headerShown: false }}  />
         <Stack.Screen name="UserDetails" component={UserDetails}  options={{ headerShown: false }}  />
         <Stack.Screen name="BiteForceMonitor" component={BiteForceMonitor}  options={{ headerShown: false }}  />
         <Stack.Screen name="SlotGraph" component={SlotGraph}  options={{ headerShown: false }}  />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView,Alert } from 'react-native';
-import COLORS from '../constants/Colors'; // Ensure this path is correct
-import Button from '../components/Button.js'; // Ensure this path is correct
+import COLORS from '../constants/Colors'; 
+import Button from '../components/Button.js'; 
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -15,8 +15,6 @@ function LoginCheck() {
 
     const onLogin = async() => {
         console.log("Login pressed");
-        // navigation.navigate("Home");
-        // navigation.navigate('Main');
         try{
             const response = await axios.post(
                 "https://bite-force-server.vercel.app/api/v1/login",
@@ -33,7 +31,6 @@ function LoginCheck() {
                     try {
                       await AsyncStorage.setItem('token', value);
                       console.log("saved")
-                    //   console.warn("saved token",value);
                       console.log(value)
                     } catch (e) {
                         // console.warn("Error while saving userId in async storage",e);
@@ -41,9 +38,7 @@ function LoginCheck() {
                 };
                 storeData(response.data.userId);
 
-
                 navigation.navigate("Main");
-                // navigation.navigate("Home");
 
             }
 

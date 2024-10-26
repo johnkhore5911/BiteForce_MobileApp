@@ -234,24 +234,3 @@ function SignUpCheck() {
 }
 
 export default SignUpCheck;
-
-// import React, { useState, useEffect } from 'react';
-// import { View, Text, Image, Pressable, TextInput, TouchableOpacity, Alert } from 'react-native';
-// import { SafeAreaView } from "react-native-safe-area-context";
-// import COLORS from '../constants/Colors';
-// import CheckBox from "react-native-checkbox";
-// import Button from '../components/Button.js';
-// import axios from 'axios';
-// import { useNavigation } from '@react-navigation/native';
-
-// const SignUpCheck = () => {
-//   return (
-//     <View>
-//       <Text>SignUpCheck</Text>
-//     </View>
-//   )
-// }
-
-// export default SignUpCheck
-
-// const styles = StyleSheet.create({})
